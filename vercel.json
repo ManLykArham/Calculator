@@ -1,8 +1,7 @@
 {
-    "version": 2, 
-        "rewrites": 
-        [
-            {"source": "/(.*)", "destination": "/"},
-            {"source": "/(.*)", "destination": "/"}
-        ] 
+    "rewrites": 
+    [
+        {"source": "/(.*)", "destination": "/calculator.html"},
+        {"source": "/(.*)", "destination": "/"}
+    ] 
 }
