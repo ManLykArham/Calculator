@@ -23,7 +23,7 @@ body {
 
 .calculator-grid>button {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 2vw;
     border: 1px, solid #FFFFFF;
     outline: none;
     background-color: rgba(255, 255, 255, 0.75);
@@ -53,10 +53,64 @@ body {
 
 .output .previous-operand {
     color: rgba(255, 255, 255, 0.75);
-    font-size: 1.5rem;
+    font-size: 2vw;
 }
 
 .output .current-operand {
     color: white;
-    font-size: 2.5rem;
+    font-size: 3vw;
+}
+
+@media only screen and (max-width: 1550px) {
+    .calculator-grid>button {
+        cursor: pointer;
+        font-size: 2vw;
+}
+.output {
+    padding: 60px;
+
+}
+.output .previous-operand {
+    margin-bottom: 30px;
+    font-size: 3vw;
+}
+
+.output .current-operand {
+    font-size: 5vw;
+}
+}
+
+
+@media only screen and (max-width: 830px) {
+    .calculator-grid>button {
+        cursor: pointer;
+        font-size: 5vw;
+}
+.output {
+    padding: 30px;
+}
+.output .previous-operand {
+    font-size: 3vw;
+}
+
+.output .current-operand {
+    font-size: 5vw;
+}
+}
+
+@media only screen and (max-width: 430px) {
+    .calculator-grid>button {
+        cursor: pointer;
+        font-size: 6vw;
+}
+.output {
+    padding: 30px;
+}
+.output .previous-operand {
+    font-size: 6vw;
+}
+
+.output .current-operand {
+    font-size: 9vw;
+}
 }

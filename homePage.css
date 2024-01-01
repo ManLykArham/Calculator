@@ -11,16 +11,45 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+ 
 #calc-btn {
-    height: 25vh;
-    width: 25vw;
+    height: 20vh;
+    width: 20vw;
     background-color: #5a64bc;
     border: 5px solid #baa6ff;
     border-radius: 20px;
 }
 
-#calc-text {
-    font-size: 5vh;
+h1 {
+    font-size: 5vw;
     color: #F7F7F7;
 }
+
+@media only screen and (max-width: 1250px) {
+    #calc-btn{
+        height: 15vh;
+        width: 30vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #calc-btn{
+        height: 13vh;
+        width: 45vw;
+    }
+}
+
+@media only screen and (max-height: 1000px) {
+    #calc-btn{
+        height: 29vh;
+        width: 45vw;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    #calc-btn{
+        height: 13vh;
+        width: 50vw;
+    }
+}
+
