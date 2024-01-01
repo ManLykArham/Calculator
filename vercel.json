@@ -2,6 +2,6 @@
     "rewrites": 
     [
         {"source": "/(.*)", "destination": "/homePage.html"},
-        {"source": "/(.*)", "destination": "/"}
+        {"source": "/(.*)", "destination": "./calculator.html"}
     ] 
 }
