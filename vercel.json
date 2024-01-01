@@ -1,6 +1,7 @@
 {
     "rewrites": 
     [
-        {"source": "/(.*)", "destination": "/homePage.html"}
+        {"source": "/(.*)", "destination": "/homePage.html"},
+        {"source": "/(.*)", "destination": "/calculator.html"}
     ] 
 }
