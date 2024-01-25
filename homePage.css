@@ -21,35 +21,28 @@ body {
 }
 
 h1 {
-    font-size: 5vw;
+    font-size: 3vw;
     color: #F7F7F7;
 }
 
 @media only screen and (max-width: 1250px) {
     #calc-btn{
         height: 15vh;
-        width: 30vw;
+        width: 23vw;
     }
 }
 
 @media only screen and (max-width: 1000px) {
     #calc-btn{
         height: 13vh;
-        width: 45vw;
-    }
-}
-
-@media only screen and (max-height: 1000px) {
-    #calc-btn{
-        height: 29vh;
-        width: 45vw;
+        width: 33vw;
     }
 }
 
 @media only screen and (max-width: 430px) {
     #calc-btn{
         height: 13vh;
-        width: 50vw;
+        width: 27vw;
     }
 }
 
