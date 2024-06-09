@@ -17,6 +17,7 @@ body {
 }
 
 .container {
+    margin: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +26,15 @@ body {
 }
 
 .calculator-grid {
+    border: 1px solid;
+    border-radius: 7px;
+    padding: 5px;
+    background-color: black;
     display: grid;
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(4, 15vh);
-    grid-template-rows: minmax(13vw, auto) repeat(5, 7vh);
+    grid-template-rows: minmax(13vw, auto) repeat(5, 10vh);
     max-height: 100vh;
 }
 
@@ -74,6 +79,10 @@ body {
 }
 
 @media only screen and (max-width: 1550px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 17vh);
+        grid-template-rows: minmax(13vw, auto) repeat(5, 10vh);
+    }
     .calculator-grid>button {
         cursor: pointer;
         font-size: 2vw;
@@ -92,7 +101,7 @@ body {
 
 @media only screen and (max-width: 830px) {
     .calculator-grid {
-        grid-template-columns: repeat(4, 10vh);
+        grid-template-columns: repeat(4, 17vh);
         grid-template-rows: minmax(13vw, auto) repeat(5, 10vh);
     }
     .calculator-grid>button {
@@ -112,7 +121,7 @@ body {
 
 @media only screen and (max-width: 430px) {
     .calculator-grid {
-        grid-template-columns: repeat(4, 20vh);
+        grid-template-columns: repeat(4, 15vh);
         grid-template-rows: minmax(13vw, auto) repeat(5, 7vh);
     }
     .calculator-grid>button {
@@ -132,7 +141,7 @@ body {
 
 @media only screen and (max-width: 300px) {
     .calculator-grid {
-        grid-template-columns: repeat(4, 17vh);
+        grid-template-columns: repeat(4, 12vh);
         grid-template-rows: minmax(13vw, auto) repeat(5, 7vh);
     }
     .calculator-grid>button {
