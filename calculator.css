@@ -1,7 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, rgb(246, 91, 91), rgb(0, 234, 255), rgb(255, 0, 242))
+    height: 100vh;
+    background: linear-gradient(to right, rgb(246, 91, 91), rgb(0, 38, 255), rgb(255, 0, 242));
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 *,
@@ -12,19 +16,27 @@ body {
     font-weight: normal;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; 
+}
+
 .calculator-grid {
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 10vh);
-    grid-template-rows: minmax(13vw, auto) repeat(5, 10vh);
+    grid-template-columns: repeat(4, 15vh);
+    grid-template-rows: minmax(13vw, auto) repeat(5, 7vh);
+    max-height: 100vh;
 }
 
 .calculator-grid>button {
     cursor: pointer;
     font-size: 2vw;
-    border: 1px, solid #FFFFFF;
+    border: 1px solid #FFFFFF; 
     outline: none;
     background-color: rgba(255, 255, 255, 0.75);
 }
@@ -35,13 +47,13 @@ body {
 
 .span-two {
     grid-column: span 2;
-    color: #adf802;
+    color: #00c3ff;
     background-color: rgba(139, 0, 139, 0.8);
 }
 
 .output {
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.90);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -65,52 +77,75 @@ body {
     .calculator-grid>button {
         cursor: pointer;
         font-size: 2vw;
+    }
+    .output {
+        padding: 60px;
+    }
+    .output .previous-operand {
+        margin-bottom: 30px;
+        font-size: 3vw;
+    }
+    .output .current-operand {
+        font-size: 5vw;
+    }
 }
-.output {
-    padding: 60px;
-
-}
-.output .previous-operand {
-    margin-bottom: 30px;
-    font-size: 3vw;
-}
-
-.output .current-operand {
-    font-size: 5vw;
-}
-}
-
 
 @media only screen and (max-width: 830px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 10vh);
+        grid-template-rows: minmax(13vw, auto) repeat(5, 10vh);
+    }
     .calculator-grid>button {
         cursor: pointer;
         font-size: 5vw;
-}
-.output {
-    padding: 30px;
-}
-.output .previous-operand {
-    font-size: 3vw;
-}
-
-.output .current-operand {
-    font-size: 5vw;
-}
+    }
+    .output {
+        padding: 30px;
+    }
+    .output .previous-operand {
+        font-size: 3vw;
+    }
+    .output .current-operand {
+        font-size: 5vw;
+    }
 }
 
 @media only screen and (max-width: 430px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 20vh);
+        grid-template-rows: minmax(13vw, auto) repeat(5, 7vh);
+    }
     .calculator-grid>button {
         cursor: pointer;
         font-size: 6vw;
-}
-.output {
-    padding: 30px;
-}
-.output .previous-operand {
-    font-size: 6vw;
+    }
+    .output {
+        padding: 30px;
+    }
+    .output .previous-operand {
+        font-size: 6vw;
+    }
+    .output .current-operand {
+        font-size: 9vw;
+    }
 }
 
-.output .current-operand {
-    font-size: 9vw;
-}
+@media only screen and (max-width: 300px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 17vh);
+        grid-template-rows: minmax(13vw, auto) repeat(5, 7vh);
+    }
+    .calculator-grid>button {
+        cursor: pointer;
+        font-size: 6vw;
+    }
+    .output {
+        padding: 30px;
+    }
+    .output .previous-operand {
+        font-size: 6vw;
+    }
+    .output .current-operand {
+        font-size: 9vw;
+    }
 }
