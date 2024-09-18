@@ -1,25 +1,31 @@
+/* Calculator class to handle calculator logic */
 class Calculator {
+    /* Constructor to initialize the operands and call clear method */
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement
         this.currentOperandTextElement = currentOperandTextElement
         this.clear()
     }
 
+    /* Clears the current and previous operands and resets operation */
     clear() {
         this.currentOperand = ''
         this.previousOperand = ''
         this.operation = undefined
     }
 
+    /* Deletes the last digit of the current operand */
     delete() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
 
+    /* Appends a number or decimal to the current operand */
     appendNumber(number) {
         if (number === '.' && this.currentOperand.includes('.')) return
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
 
+    /* Chooses the operation and prepares for the next operand */
     chooseOperation(operation) {
         if (this.currentOperand === '') return
         if (this.previousOperand !== '') {
@@ -30,6 +36,7 @@ class Calculator {
         this.currentOperand = ''
     }
 
+    /* Performs the calculation based on the operation */
     compute() {
         let computation
         const prev = parseFloat(this.previousOperand)
@@ -56,6 +63,7 @@ class Calculator {
         this.previousOperand = ''
     }
 
+    /* Formats the display of the number (with commas and decimals) */
     getDisplayNumber(number) {
         const stringNumber = number.toString()
         const integerDigits = parseFloat(stringNumber.split('.')[0])
@@ -73,6 +81,7 @@ class Calculator {
         }
     }
 
+    /* Updates the calculator display with the current and previous operands */
     updateDisplay() {
         this.currentOperandTextElement.innerText =
             this.getDisplayNumber(this.currentOperand)
@@ -85,7 +94,7 @@ class Calculator {
     }
 }
 
-
+/* Query selectors to select calculator buttons and text elements */
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
@@ -94,8 +103,10 @@ const allClearButton = document.querySelector('[data-all-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
+/* Initialize the Calculator object */
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
+/* Event listeners for number buttons to append the clicked number */
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
@@ -103,6 +114,7 @@ numberButtons.forEach(button => {
     })
 })
 
+/* Event listeners for operation buttons to choose the operation */
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.chooseOperation(button.innerText)
@@ -110,21 +122,25 @@ operationButtons.forEach(button => {
     })
 })
 
+/* Event listener for the equals button to compute the result */
 equalsButton.addEventListener('click', button => {
     calculator.compute()
     calculator.updateDisplay()
 })
 
+/* Event listener for the all-clear button to clear the calculator */
 allClearButton.addEventListener('click', button => {
     calculator.clear()
     calculator.updateDisplay()
 })
 
+/* Event listener for the delete button to delete the last digit */
 deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.updateDisplay()
 })
 
+/* Event listeners for keyboard input to control the calculator */
 document.addEventListener('keydown', function(event) {
     let patternForNumbers = /[0-9]/g;
     let patternForOperators = /[+\-*\/]/g
@@ -158,5 +174,4 @@ document.addEventListener('keydown', function(event) {
         calculator.clear()
         calculator.updateDisplay()
     }
-
 });

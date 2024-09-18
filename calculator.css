@@ -1,3 +1,4 @@
+/* Main layout container with full height and background gradient */
 body {
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@ body {
     align-items: center; 
 }
 
+/* Global box-sizing and font settings */
 *,
 *::before,
 *::after {
@@ -16,6 +18,7 @@ body {
     font-weight: normal;
 }
 
+/* Wrapper for centering the calculator */
 .container {
     margin: 100px;
     display: flex;
@@ -25,6 +28,7 @@ body {
     height: 100%; 
 }
 
+/* Grid layout for calculator buttons and output */
 .calculator-grid {
     border: 1px solid;
     border-radius: 7px;
@@ -38,24 +42,28 @@ body {
     max-height: 100vh;
 }
 
+/* Button styles for calculator buttons */
 .calculator-grid>button {
     cursor: pointer;
-    font-size: 2vw;
+    font-size: 5vw;
     border: 1px solid #FFFFFF; 
     outline: none;
     background-color: rgba(255, 255, 255, 0.75);
 }
 
+/* Hover effect for buttons */
 .calculator-grid>button:hover {
     background-color: #a9a9a9;
 }
 
+/* Special button that spans two columns */
 .span-two {
     grid-column: span 2;
     color: #00c3ff;
     background-color: rgba(139, 0, 139, 0.8);
 }
 
+/* Container for the previous and current operands displayed on the calculator */
 .output {
     grid-column: 1 / -1;
     background-color: rgba(0, 0, 0, 0.90);
@@ -63,97 +71,198 @@ body {
     align-items: flex-end;
     justify-content: space-around;
     flex-direction: column;
-    padding: 10px;
+    padding: 60px;
     word-wrap: break-word;
     word-break: break-all;
+    min-height: 30vh;
 }
 
+/* Display for the previous operand */
 .output .previous-operand {
     color: rgba(255, 255, 255, 0.75);
-    font-size: 2vw;
+    font-size: 5vw;
+    margin-bottom: 30px;
 }
 
+/* Display for the current operand */
 .output .current-operand {
     color: white;
-    font-size: 3vw;
+    font-size: 8vw;
 }
 
-@media only screen and (max-width: 1550px) {
+/* Larger screen media query adjustments */
+@media only screen and (min-width: 1400px) {
+    /* Grid layout adjustments for larger screens */
     .calculator-grid {
         grid-template-columns: repeat(4, 17vh);
-        grid-template-rows: minmax(13vw, auto) repeat(5, 10vh);
+        grid-template-rows: minmax(12vw, auto) repeat(5, 9vh);
     }
+
+    /* Button size adjustments for larger screens */
     .calculator-grid>button {
-        cursor: pointer;
+        font-size: 3vw;
+    }
+
+    /* Padding and font size adjustments for larger screens */
+    .output {
+        padding: 20px;
+    }
+
+    .output .previous-operand {
         font-size: 2vw;
     }
+
+    .output .current-operand {
+        font-size: 3.5vw;
+    }
+}
+
+/* Adjustments for mid-size screens */
+@media only screen and (max-width: 1280px) and (max-height: 800px) {
+    /* Grid layout adjustments for mid-size screens */
+    .calculator-grid {
+        grid-template-columns: repeat(4, 18vh);
+        grid-template-rows: minmax(13vw, auto) repeat(5, 11vh);
+    }
+
+    /* Button size adjustments */
+    .calculator-grid>button {
+        font-size: 5vw;
+    }
+
+    /* Adjusted padding and min-height */
+    .output {
+        padding: 60px;
+        min-height: 40vh;
+    }
+
+    .output .previous-operand {
+        font-size: 3vw;
+    }
+
+    .output .current-operand {
+        font-size: 5vw;
+    }
+}
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 1024px) and (max-height: 600px) {
+    /* Grid layout for smaller screens */
+    .calculator-grid {
+        grid-template-columns: repeat(4, 19vh);
+        grid-template-rows: minmax(13vw, auto) repeat(5, 11vh);
+    }
+
+    .calculator-grid>button {
+        font-size: 5vw;
+    }
+
+    .output {
+        padding: 40px;
+        min-height: 40vh;
+    }
+
+    .output .previous-operand {
+        font-size: 3vw;
+    }
+
+    .output .current-operand {
+        font-size: 4vw;
+    }
+}
+
+/* Adjustments for tablets */
+@media only screen and (max-width: 1023px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 15vh);
+        grid-template-rows: minmax(13vw, auto) repeat(5, 11vh);
+    }
+
+    .calculator-grid>button {
+        font-size: 8vw;
+    }
+
     .output {
         padding: 60px;
     }
+
     .output .previous-operand {
-        margin-bottom: 30px;
-        font-size: 3vw;
-    }
-    .output .current-operand {
         font-size: 5vw;
+    }
+
+    .output .current-operand {
+        font-size: 8vw;
     }
 }
 
+/* Adjustments for small screens */
 @media only screen and (max-width: 830px) {
     .calculator-grid {
-        grid-template-columns: repeat(4, 17vh);
+        grid-template-columns: repeat(4, 13vh);
         grid-template-rows: minmax(13vw, auto) repeat(5, 10vh);
     }
+
     .calculator-grid>button {
-        cursor: pointer;
-        font-size: 5vw;
+        font-size: 6vw;
     }
+
     .output {
         padding: 30px;
     }
+
     .output .previous-operand {
-        font-size: 3vw;
+        font-size: 4vw;
     }
+
     .output .current-operand {
-        font-size: 5vw;
+        font-size: 7vw;
     }
 }
 
+/* Adjustments for very small screens */
 @media only screen and (max-width: 430px) {
     .calculator-grid {
-        grid-template-columns: repeat(4, 15vh);
-        grid-template-rows: minmax(13vw, auto) repeat(5, 7vh);
+        grid-template-columns: repeat(4, 10vh);
+        grid-template-rows: minmax(13vw, auto) repeat(5, 14vw);
     }
+
     .calculator-grid>button {
-        cursor: pointer;
-        font-size: 6vw;
+        font-size: 8vw;
     }
+
     .output {
         padding: 30px;
     }
+
     .output .previous-operand {
-        font-size: 6vw;
+        font-size: 7vw;
     }
+
     .output .current-operand {
-        font-size: 9vw;
+        font-size: 10vw;
     }
 }
 
-@media only screen and (max-width: 300px) {
+/* Adjustments for very small mobile screens */
+@media only screen and (max-width: 380px) {
     .calculator-grid {
-        grid-template-columns: repeat(4, 12vh);
+        grid-template-columns: repeat(4, 8vh);
         grid-template-rows: minmax(13vw, auto) repeat(5, 7vh);
     }
+
     .calculator-grid>button {
-        cursor: pointer;
-        font-size: 6vw;
+        font-size: 7vw;
     }
+
     .output {
         padding: 30px;
+        min-height: 30vh;
     }
+
     .output .previous-operand {
         font-size: 6vw;
     }
+
     .output .current-operand {
         font-size: 9vw;
     }

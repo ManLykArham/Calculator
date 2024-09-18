@@ -1,9 +1,11 @@
+/* Reset body and html dimensions to full height */
 html,
 body {
     height: 100%;
     margin: 0;
 }
 
+/* Main container styling with center alignment */
 #main-container {
     background-color: #b5e6fc;
     height: 100%;
@@ -11,7 +13,8 @@ body {
     justify-content: center;
     align-items: center;
 }
- 
+
+/* Button styling for the calculator button */
 #calc-btn {
     height: 20vh;
     width: 20vw;
@@ -20,29 +23,32 @@ body {
     border-radius: 20px;
 }
 
+/* Heading styling for the button text */
 h1 {
     font-size: 3vw;
     color: #F7F7F7;
 }
 
+/* Media query for smaller screens (max-width: 1250px) */
 @media only screen and (max-width: 1250px) {
-    #calc-btn{
+    #calc-btn {
         height: 15vh;
         width: 23vw;
     }
 }
 
+/* Media query for smaller screens (max-width: 1000px) */
 @media only screen and (max-width: 1000px) {
-    #calc-btn{
+    #calc-btn {
         height: 13vh;
         width: 33vw;
     }
 }
 
+/* Media query for very small screens (max-width: 430px) */
 @media only screen and (max-width: 430px) {
-    #calc-btn{
+    #calc-btn {
         height: 13vh;
         width: 27vw;
     }
 }
-
