@@ -37,7 +37,7 @@ The display will show: `12 - 4 = 8`.
 
 ## 📸 Screenshots
 
-![Calculator App Screenshot](https://path-to-screenshot.png)
+![Calculator App Screenshot](assets/screenshot.png)
 
 ---
 
