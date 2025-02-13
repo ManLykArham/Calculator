@@ -20,7 +20,7 @@ Although this project was a simple introduction to front-end development, it has
 
 ## 🛠️ How to Use
 
-1. **🌐 Access the App:** Open the Calculator Web App in your web browser.
+1. **🌐 Access the App:** Open the Calculator Web App in your [web browser](https://calculator-alpha-cyan.vercel.app/).
 2. **🔢 Input Numbers:** Click on the number buttons to enter your desired numbers.
    - For example, to add 5 and 3, click on `5`, then `+`, and finally `3`.
 3. **🟰 Perform Calculation:** Click on the `=` button to see the result. The app will display `5 + 3 = 8`.
